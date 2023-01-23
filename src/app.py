@@ -69,7 +69,7 @@ def get_favorite():
     favoritesDb = Favorite.query.all()
     favorites_list = list(map(lambda favorite: favorite.serialize(), favoritesDb))
     response_body = {
-        "msg": ("Here are your favorite items:", favorites_list)
+        "msg": ("Favorite items:", favorites_list)
     }
     return jsonify(response_body), 200
     
@@ -81,7 +81,7 @@ def add_FavoriteCharacter(character_id):
     db.session.add(favoriteCharacter)
     db.session.commit()
     response_body = {
-        "msg": ("Here is your character added:", favoriteCharacter.serialize())
+        "msg": ("Character added:", favoriteCharacter.serialize())
     }
     return jsonify(response_body), 200
 
@@ -93,7 +93,7 @@ def add_FavoriteLocation(location_id):
     db.session.add(favoriteLocation)
     db.session.commit()
     response_body = {
-        "msg": ("Here is your location added:", favoriteLocation.serialize())
+        "msg": ("Location added:", favoriteLocation.serialize())
     }
     return jsonify(response_body), 200
 
